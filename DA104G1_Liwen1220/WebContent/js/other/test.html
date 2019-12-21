@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Modal Test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/sweetalert.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <style>
+    * {
+      /* border: 1px solid #000; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-4 product-item" data-target="#firstModal" data-toggle="modal">
+      <div class="card text-center text-primary">
+        <div class="card-body">
+          <div class="pic mx-auto mb-2" style="width: 100px;height:100px">
+            <img src="images/fish.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="card-title">清蒸石斑魚</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 product-item" data-target="#firstModal" data-toggle="modal">
+      <div class="card text-center text-primary">
+        <div class="card-body">
+          <div class="pic mx-auto mb-2" style="width: 100px;height:100px">
+            <img src="images/notfind.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="card-title">客家小炒</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 product-item" data-target="#firstModal" data-toggle="modal">
+      <div class="card text-center text-primary">
+        <div class="card-body">
+          <div class="pic mx-auto mb-2" style="width: 100px;height:100px">
+            <img src="images/ricedumpling.jpeg" alt="" class="img-fluid">
+          </div>
+          <div class="card-title">中部粽</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="firstModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white h4">商品詳情</div>
+        <div class="modal-title"></div>
+        <div class="modal-body">
+          <div class="pic" style="width: 100px;height:100px"></div>
+          <img class="img-fluid product-pic" src="../images/fish.jpg" alt="">
+          <div class="flex ">
+            <button id="plus" class="btn btn-success btn-sm">▲</button>
+            <input class="productCount" type="text" style="width:30px" min="1" max="50" value="1" name="" id="">
+            <button id="minus" class="btn btn-success btn-sm">▼</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-danger cancelCart" data-dismiss="modal">取消</button>
+          <button id="inCart" class="btn btn-outline-warning" data-toggle="modal" data-target="#in-cart"
+            data-dismiss="modal">加入購物車</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="../js/sweetalert.min.js"></script>
+  <script>
+    let count = $('.productCount');
+    let val = parseInt(count.val());
+    $(function () {
+      $('#plus').on('click', function () {
+        if (val < 50) {
+          val += 1;
+          count.val(val);
+        }
+      });
+
+      $('#minus').on('click', function () {
+        if (val > 1) {
+          val -= 1;
+          count.val(val);
+        }
+      });
+      let modal = $('#firstModal');
+      // modal.on('show.bs.modal',function(){
+
+      // })
+      count.on('blur', function () {
+        let val = parseInt(count.val());
+        if (val < 1 || val > 50) {
+          $('#inCart').attr('disabled', true);
+          swal({
+            title: "提示訊息 Message",
+            text: "購買數量不得低於1",
+            type: 'warning',
+            confirmButtonText: "關閉",
+            allowEscapeKey: true,
+          });
+        }
+        let nowVal = count.val();
+        console.log(nowVal);
+      });
+      $('.cancelCart').click(function () {
+        $('#inCart').attr('disabled', false);
+      })
+      $('#inCart').on('click', function () {
+        swal({
+          title: "清蒸石斑魚",
+          text: "已加入購物車囉!!!",
+          type: "success",
+          confirmButtonText: "OK",
+          allowEscapeKey: false,
+        });
+        count.val(1);
+
+      });
+    })
+  </script>
+</body>
+
+</html>

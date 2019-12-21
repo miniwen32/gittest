@@ -1,0 +1,47 @@
+:root{
+	/* 按鈕自訂樣式&色彩 start here*/
+	--btn-main-bg-color: lightblue; /*按鈕自訂背景色*/
+	--btn-pseudo-color: navy; /*擬元素效果背景色*/
+	--btn-shadow: lightseagreen; /*陰影色*/
+	/* 按鈕自訂樣式&色彩 end heree*/
+
+}
+/* 自訂按鈕樣式 Start here*/
+.customer-btn-group{
+	justify-content: center;
+}
+
+.btn-customer {
+  color: #222;
+  background-color: var(--btn-main-bg-color);
+  border-color: var(--btn-main-bg-color);
+}
+
+.btn-customer:hover {
+  color: #fff;
+  background-color: var(--btn-pseudo-color);
+  border-color: #eee;
+}
+
+.btn-customer:focus, .btn-customer.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0,0,0,0.1);
+}
+
+.btn-customer.disabled, .btn-customer:disabled {
+  color: #222;
+  background-color: var(--btn-main-bg-color);
+  border-color: var(--btn-main-bg-color);
+}
+
+.btn-customer:not(:disabled):not(.disabled):active, .btn-customer:not(:disabled):not(.disabled).active,
+.show > .btn-customer.dropdown-toggle {
+  color: #fff;
+  background-color: var(--btn-pseudo-color);
+  border-color: #4e555b;
+}
+
+.btn-customer:not(:disabled):not(.disabled):active:focus, .btn-customer:not(:disabled):not(.disabled).active:focus,
+.show > .btn-cold.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem var(--btn-shadow);
+}
+/* 自訂按鈕樣式End here */

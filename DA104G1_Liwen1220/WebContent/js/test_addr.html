@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="test_addr.html" method="get">
+        <select id="city" name="city" style="width:114px;height:22px">
+        </select>
+        <select style="width:114px;height:22px" id="district" name="district"></select>
+        <input type="text" name="addr">
+        <button>送出</button>
+    </form>
+    <script src="addr.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            let city = $('#city');
+            let str = '<option selected disabled>----選擇縣市----</option>';
+            for (let i = 0; i < addr.length; i++) {
+                str += `<option>${addr[i].name}</option>`;
+            }
+            city.html(str);
+
+            city.on('change', getData);
+
+            let optionTxt;
+            function getData(e) {
+                let district = $('#district');
+                optionTxt = $(this).find('option:selected').text();
+                let str = '';
+                let index = 0;
+                for (let i = 0; i < addr.length; i++) {
+                    if (optionTxt === addr[i].name) {
+                        // console.log(addr[i].district.length);
+                        index = addr[i].district.length;
+                        for (let j = 0; j < index; j++) {
+                            str += `<option>${addr[i].district[j]}</option>`;
+                        }
+                        district.html(str);
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

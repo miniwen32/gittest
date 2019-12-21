@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
+               </div>
+            </div>
+        </div>
+        </div>
+        <footer class="text-center text-secondary">&copy;§¿≈W≠π®ËEare<span id="year"></span>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="<%=request.getContextPath()%>/js/poper.js"></script>
+        <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+        <script src="<%=request.getContextPath()%>/js/manager.js"></script>

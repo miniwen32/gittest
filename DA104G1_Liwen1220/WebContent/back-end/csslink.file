@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="<%=request.getContextPath()%>/images/°ªÄRµæ.png" type="image/gif" sizes="72x72">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/manage.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/43de8a2881.js" crossorigin="anonymous"></script>
+<style>
+body{
+background-image: url("<%=request.getContextPath()%>/images/greenlight.jpg");
+background-size: cover; */
+    background-position: center; */
+    background-repeat: no-repeat; */
+     background-attachment: fixed; */
+ }
+
+#right {
+	margin-left: 30%;
+}
+</style>
