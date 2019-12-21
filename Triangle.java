@@ -1,6 +1,7 @@
 
 public class Triangle
 {
+private String star;
 public String role;
 public String hotfixCK;
 public String masterCK;
